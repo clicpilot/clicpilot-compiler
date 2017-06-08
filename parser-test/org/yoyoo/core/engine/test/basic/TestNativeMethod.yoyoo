@@ -1,0 +1,68 @@
+package org.yoyoo.core.engine.test.basic;
+
+import yoyoo.lang;
+
+public testCase TestNativeMethod
+{
+	TestObject obj = new TestObject();
+	public void test(){
+		
+		setTestString("test string");
+		ref/*<string>*/ str = "";
+		getTestString(str);
+		string val = str;
+		assertEquals(val, "test string");		
+		setTestObject(obj);
+		
+		testa(1);
+		testa(2);
+		
+
+	}
+	
+	public void testa(int round) {
+		
+		
+		int j=0;
+		while(j<3){
+			j++;
+			
+			if(j==1 || j==3 ){
+				continue;
+			} else {
+				toString(round);				
+			}
+		}
+		
+
+	}
+	
+	
+	public static string toString(int round){
+		
+		string code=round + " ";
+		int i=0;
+		
+		while(i<2){
+			i++;
+			toString2(round);
+		}
+		
+		return code;
+
+	}
+
+	private static string toString2(int round){
+		println(round);
+		return StringUtil.upper("a");
+
+	}
+	
+	
+	
+
+}
+
+
+
+

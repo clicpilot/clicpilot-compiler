@@ -1,0 +1,44 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestInheritance {
+	public void test() {
+		check((new TestInheritanceA()).getString());	
+		check((new TestInheritanceB()).getString());
+		check((new TestInheritanceC()).getString());
+		check((new TestInheritanceD()).getString());
+		TestInheritanceA testInheritanceB = new TestInheritanceB();
+		check(testInheritanceB.getString());
+	}	
+}
+
+
+public testCase TestInheritanceA {
+	protected string test = "test";
+	private string privatestring = "private";
+	public string getString () {
+		return "TestInheritanceA "+test;
+	}	
+}
+
+public testCase TestInheritanceB extends TestInheritanceA {	
+	public string getString () {
+		return "TestInheritanceB "+test;
+	}	
+}
+
+public testCase TestInheritanceC extends TestInheritanceB {	
+	public string getString () {
+		this.test = "TestInheritanceC "+test;
+		return test;
+	}	
+}
+
+public testCase TestInheritanceD extends TestInheritanceA {	
+	public TestInheritanceD() {
+		this.test = "TestInheritanceD "+test;
+	}
+}
+
+
+
+

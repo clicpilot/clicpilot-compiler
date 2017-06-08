@@ -1,0 +1,15 @@
+package org.yoyoo.core.engine.test.uncompilable;
+
+public testCase TestStaticMethod {
+	public void test() {
+		check(TestStaticMethodA.getString());	
+	}	
+}
+
+
+public testCase TestStaticMethodA {
+	private string test = "test";
+	public string getString () {
+		return test+"TestStaticMethodA";
+	}	
+}

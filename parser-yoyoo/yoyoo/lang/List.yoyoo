@@ -1,0 +1,216 @@
+package yoyoo.lang;
+
+public abstract yoyooList List<R> extends Collection<R> {
+	
+	public R add(int index);
+	
+	public boolean addAll(int index, Collection<R> c);	
+	
+	public R get(int index);
+	
+	public int indexOf(R r);
+	
+	public int lastIndexOf(R r);
+	
+	public ListIterator<R> listIterator();
+	
+	public ListIterator<R> listIterator(int index);
+	
+	public R remove(int index);
+	
+	public R set(int index, R r);
+	
+	public Collection<R> subList(int fromIndex, int toIndex);
+	
+}
+
+public yoyooListIterator ListIterator<R> extends Iterator<R> {
+
+	public void addItem(R r) {
+		add(r);
+	}
+
+	public boolean hasPrevious() {
+		ref/*<boolean>*/ resultRef;
+		hasPrevious(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public int nextIndex() {
+		ref/*<int>*/ resultRef;
+		nextIndex(resultRef);
+		int result = resultRef;
+		return result;
+	}
+
+	public R previous() {
+		ref/*<R>*/ resultRef;
+		previous(resultRef);
+		R result = resultRef;
+		return result;
+	}
+
+	public int previousIndex() {
+		ref/*<int>*/ resultRef;
+		previousIndex(resultRef);
+		int result = resultRef;
+		return result;
+	}
+
+	public void set(R r) {
+		setItem(r);
+	}
+	
+}
+
+public yoyooArrayList ArrayList<R> extends List<R> {
+
+	public boolean add(R r) {
+		ref/*<boolean>*/ resultRef;
+		add(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	} 
+
+	public boolean addAll(Collection<R> r) {
+		ref/*<boolean>*/ resultRef;
+		addAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public void clear() {
+		clearAll();
+	}
+
+	public boolean contains(R r) {
+		ref/*<boolean>*/ resultRef;
+		contains(r, resultRef);
+		boolean result = resultRef;
+		return result;	
+	}
+
+	public boolean containsAll(Collection<R> r) {
+		ref/*<boolean>*/ resultRef;
+		containsAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public boolean isEmpty() {
+		ref/*<boolean>*/ resultRef;
+		isEmpty(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public Iterator<R> iterator() {
+		ref/*<Iterator<R>>*/ resultRef;
+		iterator(resultRef);
+		Iterator<R> result = resultRef;
+		return result;
+	
+	}
+
+	public boolean remove(R r) {
+		ref/*<boolean>*/ resultRef;
+		remove(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	} 
+
+	public boolean removeAll(Collection<R> r) {
+		ref/*<boolean>*/ resultRef;
+		removeAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public int size() {
+		ref/*<int>*/ resultRef;
+		size(resultRef);
+		int result = resultRef;
+		return result;
+	} 
+
+	public boolean retainAll(Collection<R> r) {
+		ref/*<boolean>*/ resultRef;
+		retainAll(r, resultRef);
+		boolean result = resultRef;
+		return result;		
+	}
+
+	public R add(int index) {
+		ref/*<R>*/ resultRef;
+		add(index, resultRef);
+		R result = resultRef;
+		return result;
+	}
+	
+	public boolean addAll(int index, Collection<R> c) {
+		ref/*<boolean>*/ resultRef;
+		addAll(index, c, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public R get(int index) {
+		ref/*<R>*/ resultRef;
+		get(index, resultRef);
+		R r = resultRef;
+		return r;
+	}
+	
+	public int indexOf(R r) {
+		ref/*<int>*/ resultRef;
+		indexOf(r, resultRef);
+		int result = resultRef;
+		return result;
+	}
+	
+	public int lastIndexOf(R r) {
+		ref/*<int>*/ resultRef;
+		lastIndexOf(r, resultRef);
+		int result = resultRef;
+		return result;
+	}
+	
+	public ListIterator<R> listIterator() {
+		ref/*<ListIterator<R>>*/ resultRef;
+		listIterator(resultRef);
+		ListIterator<R> result = resultRef;
+		return result;
+	}
+	
+	public ListIterator<R> listIterator(int index) {
+		ref/*<ListIterator<R>>*/ resultRef;
+		listIterator(index, resultRef);
+		ListIterator<R> result = resultRef;
+		return result;	
+	}
+	
+	public R remove(int index) {
+		ref/*<R>*/ resultRef;
+		remove(index, resultRef);
+		R result = resultRef;
+		return result;
+	}
+	
+	public R set(int index, R r) {
+		ref/*<R>*/ resultRef;
+		set(index, r);
+		R r2 = resultRef;
+		return r2;		
+	}
+	
+	public Collection<R> subList(int fromIndex, int toIndex) {
+		ref/*<Collection<R>>*/ resultRef;
+		subList(fromIndex, toIndex, resultRef);
+		Collection<R> r = resultRef;
+		return r;	
+	
+	}
+
+	
+}

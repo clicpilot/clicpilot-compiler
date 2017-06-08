@@ -1,0 +1,16 @@
+package yoyoo.lang;
+
+
+public yoyooFloatObject Float {
+
+	protected float val;
+	 
+	public Float(float val) {
+		setValue(val);
+	}
+	
+	public float getVal() {
+		return val;
+	}
+	
+}

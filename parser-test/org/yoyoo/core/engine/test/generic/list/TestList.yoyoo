@@ -1,0 +1,66 @@
+package org.yoyoo.core.engine.test.generic.list;
+
+import yoyoo.lang;
+
+public testCase TestList
+{
+	
+	public void test(){		
+		List<TestListItem> list = new ArrayList<TestListItem>();
+		TestListItem testListItem = new TestListItem("item1");
+		list.add(testListItem);	
+		list.add(new TestListItem("item2"));
+		list.add(new TestListItem("item3"));
+		list.add(new TestListItem("item4"));
+		list.add(new TestListItem("itemEnd"));
+		this.check(list.size());
+		int size = list.size();
+		for(int i=0;i<size;i++) {
+			TestListItem test = list.get(i);
+			this.check(test.test);
+		}
+		
+		list.remove(testListItem);
+		this.check(list.size());
+		size = list.size();
+		for(int i=0;i<size;i++) {
+			TestListItem test = list.get(i);
+			this.check(test.test);
+		}
+		
+		ListIterator<TestListItem> listIterator = list.listIterator();
+		while(listIterator.hasNext()) {
+			TestListItem test = listIterator.next();
+			listIterator.set(new TestListItem("new "+test.test));		
+		}
+		
+		Iterator<TestListItem> iterator = list.iterator();
+		while(iterator.hasNext()) {
+			TestListItem test = iterator.next();
+			this.check(test.test);	
+			
+		}
+	}
+}
+
+public testCase TestListItem
+{
+	
+	public string test;
+	
+	public TestListItem(string s){
+		this.test = s; 
+	}
+	
+	
+}
+
+public testCase TestListItemB
+{
+	public string test;
+	
+	public TestListItemB(string s){
+		this.test = s; 
+	}
+}
+

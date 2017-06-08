@@ -1,0 +1,19 @@
+package yoyoo.lang;
+
+public yoyooException Exception {
+
+	protected string msg;
+	
+	public Exception(string msg) {
+		this.msg = msg;
+	}
+	
+	public string getMessage() {
+		return this.msg;
+	}
+	
+}
+
+public yoyooException CloneNotSupportedException {}
+
+public yoyooException Throwable {}

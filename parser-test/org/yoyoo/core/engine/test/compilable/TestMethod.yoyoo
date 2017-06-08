@@ -1,0 +1,28 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestMethod
+{
+	
+	public void test(){		
+		string s = "test a";
+		TestMethodA a = new TestMethodA(s);
+		a.foo(s);
+		this.check(a.test);		
+	}
+}
+
+public testCase TestMethodA
+{
+	
+	public string test;
+	
+	public TestMethodA(string s){
+		this.test = s; 
+	}
+	
+	public void foo(string str){
+		this.test = str;
+	}
+	
+	
+}

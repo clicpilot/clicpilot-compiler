@@ -1,0 +1,11 @@
+package org.yoyoo.core.engine.test.uncompilable;
+
+public function TestDuplicateFunctionDefinition
+{
+	public void test(){}
+}
+
+public function TestDuplicateFunctionDefinition
+{
+	public void test(){}
+}

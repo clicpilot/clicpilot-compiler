@@ -1,0 +1,108 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestInheritanceConstructor {
+	public void test() {
+	
+		check((new TestInheritanceConstructorA(1l)).getString());	
+		check((new TestInheritanceConstructorB(2)).getString());
+		check((new TestInheritanceConstructorC()).getString());
+		check((new TestInheritanceConstructorD()).getString());
+		check((new TestInheritanceConstructorE()).getString());
+	
+		new TestInheritanceConstructor2("test");
+	}	
+}
+
+
+public testCase TestInheritanceConstructorA {
+	private long longVal;
+	public TestInheritanceConstructorA(long longVal) {
+		this.longVal = longVal;
+	}
+	public TestInheritanceConstructorA() {
+		longVal = 3l;
+	}
+	public string getString () {
+		return "TestInheritanceConstructorA "+longVal;
+	}	
+	protected long getLongVal() {
+		return this.longVal;
+	}
+}
+
+public testCase TestInheritanceConstructorB extends TestInheritanceConstructorA {	
+	protected int intVal;
+	public string getString () {
+		return "TestInheritanceConstructorB "+intVal+" "+getLongVal();
+	}	
+	public TestInheritanceConstructorB(int intVal) {
+		this.intVal = intVal;
+	}
+}
+
+public testCase TestInheritanceConstructorC extends TestInheritanceConstructorA {	
+	public TestInheritanceConstructorC() {
+		super();
+	}
+}
+
+public testCase TestInheritanceConstructorD extends TestInheritanceConstructorA {	
+	public TestInheritanceConstructorD() {
+		super(4l);
+	}
+}
+
+public testCase TestInheritanceConstructorE extends TestInheritanceConstructorA {	
+	private string str;
+	public TestInheritanceConstructorE() {
+		this(5l, "test");
+	}
+	
+	public TestInheritanceConstructorE(long longVal, string str) {
+		super(longVal);
+		this.str = str;
+	}
+	
+	
+}
+
+public testCase TestInheritanceConstructor1 {
+	public string name;
+	public TestInheritanceConstructor1(string name) {
+		this.name = name;
+		println(name);
+	}
+}
+
+public testCase TestInheritanceConstructor2 extends TestInheritanceConstructor1 {
+	
+	public TestInheritanceConstructor2(string name) {
+		super(name);
+	}
+}
+/*
+public testCase TestInheritanceConstructor3 extends TestInheritanceConstructor2 {
+	
+	public TestInheritanceConstructor3(string name) {
+		super(name);
+		println(name);
+	}
+}
+
+public testCase TestInheritanceConstructor4 extends TestInheritanceConstructor3 {
+	
+	public TestInheritanceConstructor4(string name) {
+		super(name);
+		
+	}
+}
+
+public testCase TestInheritanceConstructor5 extends TestInheritanceConstructor4 {
+	
+	public TestInheritanceConstructor5(string name) {
+			
+		super(name);
+
+	}
+}
+*/

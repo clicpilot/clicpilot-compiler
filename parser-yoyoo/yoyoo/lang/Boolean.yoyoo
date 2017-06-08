@@ -1,0 +1,16 @@
+package yoyoo.lang;
+
+
+public yoyooBooleanObject Boolean {
+
+	protected boolean val;
+	 
+	public Boolean(boolean val) {
+		setValue(val);
+	}
+	
+	public boolean getVal() {
+		return val;
+	}
+	
+}

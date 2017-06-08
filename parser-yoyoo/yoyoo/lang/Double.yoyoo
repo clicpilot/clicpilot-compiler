@@ -1,0 +1,16 @@
+package yoyoo.lang;
+
+
+public yoyooDoubleObject Double {
+
+	protected double val;
+	 
+	public Double(double val) {
+		setValue(val);
+	}
+	
+	public double getVal() {
+		return val;
+	}
+	
+}

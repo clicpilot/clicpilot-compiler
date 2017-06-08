@@ -1,0 +1,16 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestStaticMethod {
+	public void test() {
+		check(TestStaticMethodA.getString());	
+		check(TestStaticMethodA.test);	
+	}	
+}
+
+
+public testCase TestStaticMethodA {
+	public static string test = "test";
+	public static string getString () {
+		return "TestStaticMethodA";
+	}	
+}

@@ -1,0 +1,11 @@
+package yoyoo.lang;
+
+public class CodeTemplate {
+
+	private string body;
+	
+	protected void append(string str) {
+		body+=str;
+	} 
+	
+}

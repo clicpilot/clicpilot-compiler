@@ -1,0 +1,105 @@
+package org.yoyoo.core.engine.test.basic;
+
+import yoyoo.lang; 
+
+public testCase TestRecursive
+{
+	
+	public void test(){
+		string str = testa(0);
+		assertEquals(str, "01233233");
+		
+		Pool pool = new Pool();
+		Pool pool1 = new Pool();
+		Pool pool2 = new Pool();
+		
+		Item item1 = new Item(true);
+		Item item2 = new Item(false);
+		pool1.addItem(item1);
+		pool2.addItem(item2);
+		pool.addPool(pool1);
+		pool.addPool(pool2);
+		
+		println(toString(item2, pool));
+		
+	}
+	
+	public string testa(int i) {
+		string str=""+i;
+
+		while(i<3){
+			i++;
+			str+=testa(i);
+		}
+		return str;
+	}
+	
+	
+	private string toString(Item item, Pool pool){
+		string str="";
+		Iterator<Pool> iterator=pool.getPools().iterator();
+		while(iterator.hasNext()){
+			str+=toString(item,iterator.next());
+		}
+
+		if(item.isFlag()){
+			str+="1" + getString(item);
+			str+="2";
+		}
+ 		else {
+			str+="a"+ getString(item)+"-" +getString(item)+"-"+ getString(item);
+			str+="b";
+		}
+
+		return str;
+
+	}
+	
+	private string getString(Item item) {
+		if(item.isFlag()) {
+			return "y";
+		} else {
+			return "n";
+		}
+	}
+		
+
+}
+
+	public testCase Pool {
+		public ArrayList<Item> items = new ArrayList<Item>();
+		public ArrayList<Pool> pools = new ArrayList<Pool>();
+		public void addItem(Item item) {
+			items.add(item);
+		}
+		
+		public ArrayList<Item> getItems() {
+			return items;
+		}
+		
+		public void addPool(Pool pool) {
+			pools.add(pool);
+		}
+		
+		public ArrayList<Pool> getPools() {
+			return pools;
+		}
+		 
+	}
+	
+	public testCase Item {
+	
+		private boolean flag;
+		
+		
+		
+		public Item(boolean flag) {
+			this.flag = flag;
+		}
+		
+		public boolean isFlag() {
+			return flag;
+		}
+		
+		 
+	}

@@ -1,0 +1,16 @@
+package yoyoo.lang;
+
+
+public yoyooShortObject Short {
+
+	protected short val;
+	 
+	public Short(short val) {
+		setValue(val);
+	}
+	
+	public short getVal() {
+		return val;
+	}
+	
+}

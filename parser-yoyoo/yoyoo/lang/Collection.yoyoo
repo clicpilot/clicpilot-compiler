@@ -1,0 +1,55 @@
+package yoyoo.lang;
+
+public interface CollectionInterface<R> {
+	
+	public boolean add(R r);
+
+	public boolean addAll(Collection<R> r);
+	
+	public void clear();
+
+	public boolean contains(R r);
+
+	public boolean containsAll(Collection<R> r);
+
+	public boolean isEmpty();
+
+	public Iterator<R> iterator();
+
+	public boolean remove(R r);
+
+	public boolean removeAll(Collection<R> r);
+
+	public int size();
+
+	public boolean retainAll(Collection<R> r);
+	
+}
+
+public abstract yoyooCollection Collection<R> implements CollectionInterface<R> {
+	
+}
+
+
+public yoyooIterator Iterator<R> {
+	
+	public boolean hasNext() {		
+		ref/*<boolean>*/ resultRef;
+		hasNext(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public R next() {
+		ref/*<R>*/ resultRef;
+		next(resultRef);
+		R result = resultRef;
+		return result;
+		
+	}
+
+	public void remove() {
+		removeCurrent();	
+	}
+	
+}

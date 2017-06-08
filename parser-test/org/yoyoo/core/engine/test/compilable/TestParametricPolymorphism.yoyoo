@@ -1,0 +1,31 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestParametricPolymorphism {
+	public void test() {
+		check((new TestParametricPolymorphismA()).getString("test"));	
+		check((new TestParametricPolymorphismA()).getString(1));	
+		check((new TestParametricPolymorphismB()).getString("test"));	
+		check((new TestParametricPolymorphismB()).getString(1));	
+	}	
+}
+
+
+public testCase TestParametricPolymorphismA {
+
+	public string getString (string str) {
+		return "TestParametricPolymorphismA "+str;
+	}
+	
+	public string getString (int i) {
+		return "TestParametricPolymorphismA "+i;
+	}	
+}
+
+
+public testCase TestParametricPolymorphismB extends TestParametricPolymorphismA {
+
+	public string getString (string str) {
+		return "TestParametricPolymorphismB "+str;
+	}
+	
+}

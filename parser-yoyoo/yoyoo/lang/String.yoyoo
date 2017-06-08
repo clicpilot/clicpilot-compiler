@@ -1,0 +1,106 @@
+package yoyoo.lang;
+
+
+public yoyooStringObject String {
+
+	protected string msg;
+	 
+	public String(string msg) {
+		setString(msg);
+	}
+	
+	public string getVal() {
+		return msg;
+	}
+	
+	public static string firstUpper(string src) {
+		ref/*<string>*/ resultRef;
+		firstUpper(src, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static string firstLower(string src) {
+		ref/*<string>*/ resultRef;
+		firstLower(src, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static string upper(string src) {
+		ref/*<string>*/ resultRef;
+		upper(src, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static string lower(string src) {
+		ref/*<string>*/ resultRef;
+		lower(src, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static string quote(string src) {
+		ref/*<string>*/ resultRef;
+		quote(src, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static int length(string src) {
+		ref/*<int>*/ resultRef;
+		length(src, resultRef);
+		int tar = resultRef;
+		return tar;
+	}
+	
+	public static boolean isNull(string src) {
+		ref/*<boolean>*/ resultRef;
+		isNull(src, resultRef);
+		boolean tar = resultRef;
+		return tar;
+	}
+	
+	public static string substring(string src, int offset) {
+		ref/*<string>*/ resultRef;
+		substring(src, offset, resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+		
+	public static string substring(string src, int offset, int len) {
+		ref/*<string>*/ resultRef;
+		substring(src, offset, len,  resultRef);
+		string tar = resultRef;
+		return tar;
+	}
+	
+	public static int len(string src) {
+		ref/*<int>*/ resultRef;
+		len(src, resultRef);
+		int tar = resultRef;
+		return tar;
+	}
+	
+	public static string valueOf(long num) {
+		return (num+"");
+	}
+	
+	public static string valueOf(int num) {
+		return (num+"");
+	}
+	
+	public static string valueOf(float num) {
+		return (num+"");
+	}
+	
+	public static string valueOf(double num) {
+		return (num+"");
+	}
+	
+	public static string valueOf(short num) {
+		return (num+"");
+	}
+
+}

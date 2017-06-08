@@ -1,0 +1,74 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestInterface
+{
+	
+	public void test(){		
+		TestInterfaceA impl = new TestInterfaceAImplA();
+		this.check(impl.getString());
+		impl = new TestInterfaceAImplB();
+		this.check(impl.getString());
+		impl = new TestInterfaceImplAB();
+		this.check(impl.getString());
+		
+		TestInterfaceB implB = new TestInterfaceImplAB();
+		this.check(implB.getStringB());		
+		this.check(((TestInterfaceA)implB).getString());
+		
+	}
+}
+
+public interface TestInterfaceA
+{
+	public string getString();
+	public int getInteger();
+	public string test = "TestInterfaceA";
+}
+
+public interface TestInterfaceB
+{
+	public string getStringB();
+	public int getFloat();
+	public string test = "TestInterfaceB";
+}
+
+public testCase TestInterfaceAImplA implements TestInterfaceA
+{
+	public string getString() {
+		return test + " TestInterfaceAImplA";
+	}	
+	
+	public int getInteger() {
+		
+		return 1;
+	}
+}
+
+public testCase TestInterfaceAImplB implements TestInterfaceA {
+	public string getString() {
+		return test + " TestInterfaceAImplB";
+	}	
+	
+	public int getInteger() {
+		
+		return 2;
+	}
+}
+
+public testCase TestInterfaceImplAB extends TestInterfaceAImplA implements TestInterfaceA, TestInterfaceB {
+
+	
+	public string getStringB() {
+		return TestInterfaceB.test + " TestInterfaceAImplAB";
+	}
+	
+	public int getInteger() {
+		
+		return 2;
+	}
+	
+	public float getFloat() {
+		
+		return 2f;
+	}	
+}

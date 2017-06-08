@@ -1,0 +1,9 @@
+package yoyoo.lang;
+
+public codeRunner CodeRunner {
+
+	public static void runFunction(string pkg, string classname, string function) {
+		run(pkg, classname, function);
+	}
+	
+}

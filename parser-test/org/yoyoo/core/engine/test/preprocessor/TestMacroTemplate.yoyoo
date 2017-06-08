@@ -1,0 +1,16 @@
+package org.yoyoo.core.engine.test.preprocessor;
+
+public testCase TestMacroTemplate {
+	/*#
+	if(false) {
+	#*/
+	public void test() {
+		
+		string s = "hello";
+		
+	}
+	/*#
+	}
+	#*/
+	
+}

@@ -1,0 +1,177 @@
+package yoyoo.lang;
+
+public abstract yoyooMap Map<K, V>  {
+	
+	public void clear();
+	
+	public boolean containsKey(K k);
+	
+	public boolean containsValue(V v);
+	
+	public V get(K k);
+	
+	public boolean isEmpty();
+	
+	public Set<K> keySet();
+	
+	public V put(K k, V v);
+	
+	public void putAll(Map<K, V> map);
+	
+	public V remove(K k);
+	
+	public int size();
+	
+	public List<V> values();	
+	
+}
+
+public yoyooHashMap HashMap<K, V> extends Map<K, V> {
+	
+	public void clear() {
+		clearAll();
+	}
+	
+	public boolean containsKey(K k) {
+		ref/*<boolean>*/ resultRef;
+		containsKey(k, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public boolean containsValue(V v) {
+		ref/*<boolean>*/ resultRef;
+		containsValue(v, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public V get(K k) {
+		ref/*<V>*/ resultRefV;
+		get(k, resultRefV);
+		V v = resultRefV;
+		return v;
+	}
+	
+	public boolean isEmpty() {
+		ref/*<boolean>*/ resultRef;
+		isEmpty(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public Set<K> keySet() {
+		ref/*<Set<K>>*/ resultRef;
+		keySet(resultRef);
+		Set<K> s = resultRef;
+		return s;
+	}
+	
+	public V put(K k, V v) {
+		ref/*<V>*/ resultRef;
+		put(k, v, resultRef);
+		V v1 = resultRef;
+		return v1;
+	}
+	
+	public void putAll(Map<K, V> map) {
+		putMap(map);
+	}
+	
+	public V remove(K k) {
+		ref/*<V>*/ resultRef;
+		remove(k, resultRef);
+		V v = resultRef;
+		return v;
+	}
+	
+	public int size() {
+		ref/*<int>*/ resultRef;
+		size(resultRef);
+		int result = resultRef;
+		return result;
+	}
+	
+	public List<V> values() {
+		ref/*<List<V>>*/ resultRef;
+		values(resultRef);
+		List<V> v = resultRef;
+		return v;
+	}	
+	
+}
+
+public yoyooLinkedHashMap LinkedHashMap<K, V> extends Map<K, V> {
+	
+	public void clear() {
+		clearAll();
+	}
+	
+	public boolean containsKey(K k) {
+		ref/*<boolean>*/ resultRef;
+		containsKey(k, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public boolean containsValue(V v) {
+		ref/*<boolean>*/ resultRef;
+		containsValue(v, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public V get(K k) {
+		ref/*<V>*/ resultRef;
+		get(k, resultRef);
+		V v = resultRef;
+		return v;
+	}
+	
+	public boolean isEmpty() {
+		ref/*<boolean>*/ resultRef;
+		isEmpty(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public Set<K> keySet() {
+		ref/*<Set<K>>*/ resultRef;
+		keySet(resultRef);
+		Set<K> s = resultRef;
+		return s;
+	}
+	
+	public V put(K k, V v) {
+		ref/*<V>*/ resultRef;
+		put(k, v, resultRef);
+		V v1 = resultRef;
+		return v1;
+	}
+	
+	public void putAll(Map<K, V> map) {
+		putMap(map);
+	}
+	
+	public V remove(K k) {
+		ref/*<V>*/ resultRef;
+		remove(k, resultRef);
+		V v = resultRef;
+		return v;
+	}
+	
+	public int size() {
+		ref/*<int>*/ resultRef;
+		size(resultRef);
+		int result = resultRef;
+		return result;
+	}
+	
+	public List<V> values() {
+		ref/*<List<V>>*/ resultRef;
+		values(resultRef);
+		List<V> v = resultRef;
+		return v;
+	}	
+	
+}

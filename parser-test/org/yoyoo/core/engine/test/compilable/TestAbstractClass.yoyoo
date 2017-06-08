@@ -1,0 +1,68 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestAbstractClass
+{
+	
+	public void test(){		
+		TestAbstractClassA implA = new TestAbstractClassAImplA();
+		this.check(implA.getString());
+		TestAbstractClassB implB = new TestAbstractClassAImplB();
+		this.check(implB.getString());
+		
+		TestInterfaceAbstractClassA implAB = new TestAbstractClassAImplAB();
+		this.check(implAB.getString());
+		this.check(((TestInterfaceAbstractClassA)implAB).getLong());
+		
+		TestInterfaceAbstractClassA implAB2 = ((TestInterfaceAbstractClassA)implAB);
+		this.check(implAB2.getString());
+		this.check(implAB2.getLong());
+		
+	}
+}
+public interface TestInterfaceAbstractClassA {
+	public string getString();
+	public long getLong();
+}
+
+public abstract testCase TestAbstractClassA
+{
+	public string getString();
+	public int getInteger();
+	public string test = "TestAbstractClassA";
+}
+
+public abstract testCase TestAbstractClassB
+{
+	public string getString();
+	public float getFloat();
+	public string test = "TestAbstractClassB";
+}
+
+public testCase TestAbstractClassAImplA extends TestAbstractClassA
+{
+	public string getString() {
+		return test + " TestAbstractClassAImplA";
+	}	
+	
+	public int getInteger() {
+		
+		return 1;
+	}
+}
+
+public testCase TestAbstractClassAImplB extends TestAbstractClassB {
+	public string getString() {
+		return test + " TestAbstractClassAImplB";
+	}	
+	
+	public float getFloat() {
+		
+		return 2f;
+	}
+}
+
+public testCase TestAbstractClassAImplAB extends TestAbstractClassAImplA implements TestInterfaceAbstractClassA {
+	public long getLong() {
+		return 1l;
+	}
+}

@@ -1,0 +1,29 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestReferenceFunction
+{
+	
+	public void test(){
+		TestReferenceFunctionA t1 = new TestReferenceFunctionA();
+		t1.test();
+	}
+}
+
+public testCase TestReferenceFunctionA
+{
+	TestReferenceFunctionB t2 = new TestReferenceFunctionB();
+	//TestReferenceFunctionD t3 = new TestReferenceFunctionD();
+	//TestReferenceFunctionC t4 = new TestReferenceFunctionC();
+	public void test(){
+		t2.test();
+		check("testA");
+	}
+}
+
+public testCase TestReferenceFunctionB
+{
+	public void test(){
+		check("testB");
+	}
+}
+

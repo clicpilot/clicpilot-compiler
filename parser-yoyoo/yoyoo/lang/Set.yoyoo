@@ -1,0 +1,83 @@
+package yoyoo.lang;
+
+public abstract yoyooSet Set<R> implements Collection<R>  {
+	
+}
+
+public yoyooHashSet HashSet<R> extends Set<R> {
+	
+	public boolean add(R r) {
+		ref/*<boolean>*/ resultRef;
+		add(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public boolean addAll(Collection<R> r) {
+		ref/*<boolean>*/ resultRef;
+		addAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	public void clear() {
+		clearAll();
+	}
+
+	public boolean contains(R r) {
+		ref/*<boolean>*/ resultRef;
+		contains(r, resultRef);
+		boolean result = resultRef;
+		return result;	
+	}
+
+	public boolean containsAll(Collection<R> r){
+		ref/*<boolean>*/ resultRef;
+		containsAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public boolean isEmpty(){
+		ref/*<boolean>*/ resultRef;
+		isEmpty(resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public Iterator<R> iterator(){
+		ref/*<Iterator<R>>*/ resultRef;
+		iterator(resultRef);
+		Iterator<R> result = resultRef;
+		return result;
+	}
+
+	public boolean remove(R r){
+		ref/*<boolean>*/ resultRef;
+		remove(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public boolean removeAll(Collection<R> r){
+		ref/*<boolean>*/ resultRef;
+		removeAll(r, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+
+	public int size(){
+		ref/*<int>*/ resultRef;
+		size(resultRef);
+		int result = resultRef;
+		return result;
+	}
+
+	public boolean retainAll(Collection<R> r){
+		ref/*<boolean>*/ resultRef;
+		retainAll(r, resultRef);
+		boolean result = resultRef;
+		return result;	
+	}
+	
+}

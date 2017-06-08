@@ -1,0 +1,68 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestInheritanceMethod
+{
+	
+	public void test(){		
+		check((new TestInheritanceMethodA()).getTest());	
+		check((new TestInheritanceMethodB()).getTest());
+		check((new TestInheritanceMethodB()).getTest0());
+		check((new TestInheritanceMethodB()).getTest1());
+		check((new TestInheritanceMethodB()).getTest2());
+		check((new TestInheritanceMethodB()).getTest3());
+		check((new TestInheritanceMethodC()).getTest());
+		check((new TestInheritanceMethodC()).getTest4());
+		check((new TestInheritanceMethodC()).getTest2());
+		TestInheritanceMethodB cInstance = new TestInheritanceMethodC();
+		check(cInstance.getTest2());
+		check(cInstance.getTest5());
+	}
+}
+public testCase TestInheritanceMethodC extends TestInheritanceMethodB {
+	
+	protected string getTest4() {
+		return getTest();
+	}
+	
+	
+	protected string getTest2() {
+		return super.getTest()+" C";
+	}
+	
+}
+public testCase TestInheritanceMethodA {
+	protected string test = "testA";
+	protected string getTest() {
+		return test;
+	}
+	
+}
+
+public testCase TestInheritanceMethodB extends TestInheritanceMethodA {
+	protected string getTest0() {
+		return this.getTest();
+	}
+	
+	protected string getTest1() {
+		return super.getTest();
+	}
+	
+	protected string getTest2() {
+		return super.getTest()+" B";
+	}
+	
+	protected string getTest3() {
+		return super.test;
+	}
+	
+	protected string getTest4() {
+		return getTest2();
+	}
+	
+	protected string getTest5() {
+		return getTest2();
+	}
+	
+	
+}
+

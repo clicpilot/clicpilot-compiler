@@ -1,0 +1,24 @@
+package org.yoyoo.core.engine.test.runtimecompiler;
+
+import yoyoo.lang;
+
+
+public testCase SimpleCompiler {
+
+	public void test() {
+		string code = "package org.yoyoo.core.engine.test.runtimecompiler.simple;
+		public testCase Simple {
+			public void hello() {
+				println(\"test compiler\");
+				assertEquals(\"test compiler\", \"test compiler\");
+			}
+		}";
+		
+		
+		CodeContainer.compile(code);
+		CodeRunner.runFunction("org.yoyoo.core.engine.test.runtimecompiler.simple", "Simple", "hello");
+		CodeEncoder.encode("org.yoyoo.core.engine.test.runtimecompiler.simple", "Simple", "c:/test.txt");
+	}
+
+}
+

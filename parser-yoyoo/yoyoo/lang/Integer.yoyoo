@@ -1,0 +1,16 @@
+package yoyoo.lang;
+
+
+public yoyooIntegerObject Integer {
+
+	protected int val;
+	 
+	public Integer(int val) {
+		setValue(val);
+	}
+	
+	public int getVal() {
+		return val;
+	}
+	
+}

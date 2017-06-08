@@ -1,0 +1,60 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestMethod
+{
+	
+	public void test(){
+		int i = 0;
+		int j = fooInt(i);
+		assertEquals(i, 0);
+		assertEquals(j, 10);		
+		TestObject o = new TestObject();
+		string s = fooString(o);
+		fooTestObject(o);
+		
+		assertEquals(o.s, "string changed");
+		assertEquals(s, "string changed");
+		assertEquals((new TestObject()).s, "string");
+		assertEquals(o.getObject1().sTestObject1, "string1");
+		fooTestObject(null);
+		TestObject nullref = null;
+		boolean isNotNull = nullref != null;
+		assertEquals(isNotNull, false);
+	}
+	
+	public int fooInt(int i) {
+		i = 10;
+		return 10;
+	}
+	
+	public string fooString(TestObject i) {
+		i.s = "string changed";
+		return "string changed";
+	}
+	
+	public void fooTestObject(TestObject i) {
+		if(i!=null)
+			i = new TestObject();
+		else
+			i = null;
+	}
+	
+
+}
+
+public testCase TestObject {
+	public string s = "string";
+	public TestObject1 object1 = new TestObject1();
+	public TestObject1 getObject1() {
+		return object1;
+	}
+}
+
+public testCase TestObject1 {
+	public string sTestObject1 = "string1";
+}
+
+
+
+
+

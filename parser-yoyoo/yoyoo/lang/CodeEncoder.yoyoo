@@ -1,0 +1,29 @@
+package yoyoo.lang;
+
+public codeEncoder CodeEncoder {
+
+	public static void encode(string pkg, string classname) {
+		encodeClass(pkg, classname);
+	}
+	
+	public static void encode(string pkg, string classname, string fname) {
+		encodeClass(pkg, classname, fname);
+	}
+	
+	public static void encodeFromCode(string code, string path) {
+		encodeClassFromCode(code, path);
+	}
+	
+	public static void encodeFromCode(string code, string path, string lang) {
+		encodeClassFromCode(code, path, lang);
+	}
+	
+	public static boolean cleanPackage(string pkg, string path) {
+		ref/*<boolean>*/ resultRef;
+		cleanClassPackage(pkg, path, resultRef);
+		boolean result = resultRef;
+		return result;
+	}
+	
+	
+}

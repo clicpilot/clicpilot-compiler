@@ -1,0 +1,41 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestBreak
+{
+	
+	public void test(){
+	
+		// test for
+		int j = 0;
+		for(int i=0;i<10;i++) {
+			j = i;
+			if(i==5)
+				break;
+		}
+		assertEquals(j, 5);
+		
+		//test while
+		j = 0;
+		int i = 0;
+		while(i<10) {
+			j = i;
+			i++;
+			if(i==5)
+				break;
+		}
+		assertEquals(j, 4);
+		
+		//test do while
+		j = 0;
+		i = 0;
+		do {
+			i++;
+			j = i;
+			if(i==5)
+				break;
+		}
+		while(i<10);		
+		assertEquals(j, 5);
+		
+	}
+}

@@ -1,0 +1,29 @@
+package org.yoyoo.core.engine.test.uncompilable;
+
+public testCase TestStaticConstructor
+{
+	TestStaticConstructorA a;
+	public void test(){
+		check(a);
+	}
+}
+
+public testCase TestStaticConstructorA
+{
+	TestStaticConstructorB b = new TestStaticConstructorB();
+	public static TestStaticConstructorA()
+	{
+		setTestString("test a");
+		b.test = "test b";
+	}
+	
+	public void foo(){}
+	
+}
+
+public testCase TestStaticConstructorB
+{
+	string test;
+	public void foo(){}
+	
+}

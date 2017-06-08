@@ -1,0 +1,26 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestAllocation{
+	TestAllocationA a1 = new TestAllocationA();
+	TestAllocationA b1 = new TestAllocationA();	
+	public void test(){
+		a1.b = new TestAllocationB("a1");
+		b1.b = new TestAllocationB("b1");	
+		ref/*<string>*/ txtRef1;
+		ref/*<string>*/ txtRef2;
+		a1.b.getTestString(txtRef1);
+		b1.b.getTestString(txtRef2);
+		string txt1 = txtRef1;
+		string txt2 = txtRef2;	
+		assertEquals(txt1, "a1");	
+		assertEquals(txt2, "b1");			
+	}
+}
+
+public testCase TestAllocationA {
+	public TestAllocationB b;
+}
+
+public testCase TestAllocationB {
+
+}

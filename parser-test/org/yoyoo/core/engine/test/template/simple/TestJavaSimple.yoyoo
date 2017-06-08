@@ -1,0 +1,107 @@
+package org.yoyoo.core.engine.test.template.simple;
+
+import yoyoo.lang;
+
+public testCase TestJavaSimple {
+	private int j = 0;
+	public void test() {
+		CodeEncoder.encode("org.yoyoo.core.engine.test.template.simple", "TestJavaSimple");
+	}
+	
+	public void test (TestClassA classA) {
+		TestClassA classA1 = new TestClassA(5, 10);
+		classA1.value1 = 100;
+		classA.value1 = classA1.value1;
+		classA.value2 = classA1.value2;
+		string str = classA1.getString(10);
+		int value = classA1.getValue1(classA);
+	}
+	public void test(int i) {
+
+		if(i>5 || i<1) {
+			i=8;
+		} else if(i>2 && i<4) {
+			i=9;
+		} else {
+			i=10;
+		}
+		int a = i>0&&i<10?0:1;
+		i=((a+1)+6)*8;
+	}	
+	public void test(string s) {
+
+		int j = 5;
+		for(int i=0;i<10;i++) {
+			j = i;
+		}
+
+		j = 0;
+		int i = 0;
+		while(i<10) {
+			j = i;
+			i++;
+		}
+
+
+		j = 0;
+		i = 0;
+		do {
+			i++;
+			j = i;
+			if(i==5) {
+				
+			} 
+		}
+		while(i<10);	
+		
+		switch(j) {
+			case 1:
+				i=j+1;
+				break;
+			case 2:
+			case 4:
+				i=j+3;
+				break;
+			case 3:
+			default:
+				i=j;
+				break;		
+		
+		}	
+		
+
+
+	}	
+	public void test(int[] i) {
+		string[] s = new string[i.length];
+		for(int j=0;j<i.length;j++) {
+			s[j] = ""+i[j];
+		}
+		TestClassA[] classA = new TestClassA[i.length];
+		for(int j=0;j<i.length;j++) {
+			classA[j] = new TestClassA(i[j], i[j]);
+		}
+		s = new string[]{"1","2"};
+		string[][] s2 = new string[][]{{"1","2"},{"3","4"}};
+		string[][] s3 = {{"1","2"},{"3","4"}};
+	}
+	
+}
+
+public testCase TestClassA {
+	public int value1 = 0;
+	public int value2 = 0;
+	public TestClassA(int value1, int value2) {
+		this.value1 = value1;
+		this.value2 = value2;
+	}
+	
+	public string getString(int i) {
+		return "value is "+i;
+	}
+	
+	public int getValue1(TestClassA classA) {
+		return classA.value1;
+	}
+}
+

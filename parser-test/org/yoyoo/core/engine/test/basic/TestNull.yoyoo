@@ -1,0 +1,18 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestNull
+{
+	
+	public void test(){
+		TestNullObject object = null;
+		assertEquals(object==null);
+
+	}
+	
+	
+	
+}
+
+public testCase TestNullObject {
+	public string nullstring = "null";
+}

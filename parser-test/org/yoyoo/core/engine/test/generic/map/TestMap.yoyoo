@@ -1,0 +1,72 @@
+package org.yoyoo.core.engine.test.generic.map;
+
+import yoyoo.lang;
+
+public testCase TestMap
+{
+	
+	public void test(){		
+		Map<String, TestMapItem> map1 = new HashMap<String, TestMapItem>();
+		Map<string, TestMapItem> map2 = new LinkedHashMap<string, TestMapItem>();
+		TestMapItem[] testMapItems = new TestMapItem[]{
+								new TestMapItem("item1"),		
+								new TestMapItem("item2"),
+								new TestMapItem("item3"),		
+								new TestMapItem("item4"),
+								new TestMapItem("item5"),		
+								new TestMapItem("item6")
+		};
+
+		for(int i=0;i<testMapItems.length;i++) {
+			map1.put(new String(testMapItems[i].test), testMapItems[i]);
+			map2.put(testMapItems[i].test, testMapItems[i]);
+		}
+		
+		
+		this.check(map1.keySet().size());
+		this.check(map1.values().size());
+		this.check(map2.keySet().size());
+		this.check(map2.values().size());
+		
+		for(int i=0;i<testMapItems.length;i++) {
+			String key = new String("item"+(i+1));
+			TestMapItem value = map1.get(key);
+			//this.check(map1.get(key).test);
+			this.check(((TestMapItem)map1.get(key)).test);
+		}
+		
+		Iterator<string> mapIterator = map2.keySet().iterator();
+		while(mapIterator.hasNext()) {
+			string mapKey = mapIterator.next();
+			this.check(map2.get(mapKey).test);			
+		}
+		
+		
+		
+	}
+}
+
+public testCase TestMapItem
+{
+	
+	public string test;
+	
+	public TestMapItem(string s){
+		this.test = s; 
+	}
+	
+	public string getTest() {
+		return test;
+	}
+	
+}
+
+public testCase TestMapItemB
+{
+	public string test;
+	
+	public TestMapItemB(string s){
+		this.test = s; 
+	}
+}
+

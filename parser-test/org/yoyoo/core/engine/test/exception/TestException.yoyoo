@@ -1,0 +1,126 @@
+package org.yoyoo.core.engine.test.exception;
+
+import yoyoo.lang; 
+
+public testCase TestException
+{
+	
+	public void test(){		
+		testA();
+		testC();
+	}
+	
+	public void testA() {
+		TestExceptionClassA classA = null;
+		try {		
+			classA = new TestExceptionClassA("test");
+		} catch(TestExceptionA e) {
+			println(e.getMessage());
+			assertEquals(classA.getString(), "TestExceptionClassA");
+			assertEquals(e.getMessage(), "exception a");			
+		}
+		try {
+			classA.testThrow();	
+			classA.throwExceptionC();
+			assertEquals(false);				
+		} catch(TestExceptionB e) {
+			println(e.getMessage());
+			assertEquals(classA.getString(), "TestExceptionClassA");
+			assertEquals(e.getMessage(), "exception b");			
+		} catch(TestExceptionC e) {
+			println(e.getMessage());
+			assertEquals(classA.getString(), "TestExceptionClassA");
+			assertEquals(e.getMessage(), "exception c");			
+		} finally {
+			println("finally");
+		}
+		
+		
+	}
+	public void testB() throws TestExceptionC {
+		TestExceptionClassA classA = new TestExceptionClassA();
+		string str = "c";
+		
+		if(str=="c")
+			classA.throwExceptionC("c");
+		
+	}
+	public void testC() {
+		try {
+			testB();
+		} catch(TestExceptionC e) {
+		}
+	}
+}
+
+public testCase TestExceptionClassA
+{
+	public string str = "TestExceptionClassA";
+	public TestExceptionClassA(string str) throws TestExceptionA {
+		throw new TestExceptionA("exception a");
+	}
+	public TestExceptionClassA() {
+		
+	}
+	public string getString() {
+		return str;
+	}
+	public void testThrow() throws TestExceptionB {
+		
+		int j=0;
+		try {
+			for(int i=0;i<10;i++) {
+				j=i;
+				if(j==5) {
+					throw new TestExceptionA("exception a "+j);
+				}	
+			}
+			assertEquals(false);
+		} catch(TestExceptionA e) {
+			assertEquals(e.getMessage(), "exception a 5");
+		} finally {
+			assertEquals(j, 5);
+			j=100;
+		}
+		assertEquals(j, 100);
+		
+		
+		throwExceptionB();
+		
+		
+	}
+	
+	
+	public void throwExceptionB() throws TestExceptionB  {
+		throw new TestExceptionB("exception b");
+	}
+	public void throwExceptionC() throws TestExceptionC  {
+		throw new TestExceptionC("exception C");
+	}
+	public void throwExceptionC(string str) throws TestExceptionC  {
+		if(str=="c") {
+			throw new TestExceptionC("exception C");
+		} else {
+			return;
+		}
+	}
+	
+}
+
+public yoyooException TestExceptionA extends Exception {
+	public TestExceptionA(string msg) {
+		super(msg);
+	}
+}
+
+public yoyooException TestExceptionB extends Exception {
+	public TestExceptionB(string msg) {
+		super(msg);
+	}
+}
+
+public yoyooException TestExceptionC extends Exception {
+	public TestExceptionC(string msg) {
+		super(msg);
+	}
+}

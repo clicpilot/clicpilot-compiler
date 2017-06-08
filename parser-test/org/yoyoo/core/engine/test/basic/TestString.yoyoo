@@ -1,0 +1,23 @@
+package org.yoyoo.core.engine.test.basic;
+
+import yoyoo.lang;
+
+public testCase TestString {
+
+	public void test(){
+		string str = "\"test\"";
+		assertEquals(str, "\"test\"");
+
+		
+		str = "
+test
+";
+		assertEquals(str, "
+test
+");
+		
+		assertEquals(StringUtil.length(str), 8);
+
+		
+	}
+}

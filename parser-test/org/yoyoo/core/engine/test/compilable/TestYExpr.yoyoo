@@ -1,0 +1,25 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestYExpr
+{
+	
+	public void test(){
+		TestYExprA a = new TestYExprA();
+		evalExpr(a.exp, a.test2, a.testref);
+		boolean result = a.testref; 
+		check(result);
+	}
+}
+
+public testCase TestYExprA
+{
+	
+	public string test1 = "test a";
+	public string test2 = "1aAAA";
+	public ref/*<boolean>*/ testref = false;
+	public expr/*<Reg>*/ exp = /"[0-9][a-z][A-Z]{3}"/;
+
+	
+}
+
+

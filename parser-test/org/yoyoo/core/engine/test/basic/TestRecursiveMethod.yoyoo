@@ -1,0 +1,76 @@
+package org.yoyoo.core.engine.test.basic;
+
+import yoyoo.lang;
+
+public testCase TestRecursiveMethod
+{
+	
+	public void test(){
+		TestRecursiveObj testRecursive1 = new TestRecursiveObj("s1");
+		TestRecursiveObj testRecursive2 = new TestRecursiveObj("s2");
+		TestRecursiveObj testRecursive3 = new TestRecursiveObj("s3");
+		TestRecursiveObj testRecursive4 = new TestRecursiveObj("s4");
+		testRecursive1.setRecursive(testRecursive2);
+		testRecursive2.setRecursive(testRecursive3);
+		//testRecursive3.setRecursive(testRecursive4);
+		//testRecursive1.testRecursive();
+		ArrayList<string> list = testRecursive1.getAllStr();
+		Iterator<string> iterator = list.iterator();
+		string s = "";
+		while(iterator.hasNext()) {
+			s+=iterator.next()+",";
+		}
+		println(s);
+		assertEquals(s, "s1,s2,s3,");	
+	}
+	
+}
+
+
+
+
+public testCase TestRecursiveObj {
+
+	public string str;
+	public TestRecursiveObj testRecursive;
+	
+	public TestRecursiveObj(string str){
+		this.str = str;
+	}
+	
+	public ArrayList<string> getStr() {
+		ArrayList<string> sc = new ArrayList<string>();
+		sc.add(str);
+		return sc;
+	}
+	
+	public ArrayList<string> getBaseStr() {
+		ArrayList<string> sb = new ArrayList<string>();
+		if(this.testRecursive!=null){
+			sb.addAll(this.testRecursive.getStr());
+			sb.addAll(this.testRecursive.getBaseStr());
+		} 
+		
+		return sb;
+	}
+	
+	
+	public ArrayList<string> getAllStr() {
+		ArrayList<string> sa = new ArrayList<string>();
+		sa.addAll(this.getStr());
+		sa.addAll(this.getBaseStr());
+		return sa;
+	}
+	
+	public void setRecursive(TestRecursiveObj testRecursive) {
+		this.testRecursive = testRecursive;
+	}
+	
+	
+	
+	
+	
+	
+}
+
+

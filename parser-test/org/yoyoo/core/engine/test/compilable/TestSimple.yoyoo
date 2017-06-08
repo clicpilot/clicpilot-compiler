@@ -1,0 +1,38 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestSimple
+{
+	
+	public void test(){		
+		string s = "test a";
+		assertEquals(s, "test a");
+		
+	
+		for(int i=0;i<3;i++) {
+			s = s + " " + i;	 
+		}		
+		
+		assertEquals(s, "test a 0 1 2");
+		
+		int j = 1;
+		foo(j);
+				
+		assertEquals(j, 1);
+		
+		j=(j==1?10:20);
+		assertEquals(j, 10);
+		
+		s = "test a";
+		for(int i=0;i<3;i++) {
+			s += "" + i+"" + i;	 
+		}
+		assertEquals(s, "test a001122");
+				
+	}
+	
+	public void foo(int i) {
+		i = 10;
+	}
+	
+	
+}

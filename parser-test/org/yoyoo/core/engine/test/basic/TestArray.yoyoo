@@ -1,0 +1,59 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestArray{
+
+	public void test(){
+		string test = "";
+		
+		string[] s1 = new string[]{"1","2","3","3"};		
+		assertEquals(s1.length, 4);		
+		changeArrayValue(s1, "4", 3);
+		changeArray(s1);
+		for(int i =0;i<s1.length;i++) {
+			test += s1[i];
+		}
+		assertEquals(test, "1234");
+		/*
+		string[][] s2 = {{"1","2"},{"3","4"}};
+		for(int i =0;i<s2.length;i++) {
+			for(int j =0;j<s2[i].length;j++) {
+				test += s2[i][j];
+			}
+		}
+		assertEquals(test, "12341234");
+		
+		
+		string[][] s3 = new string[][]{{"1","2"},{"3","4","9"}};
+		for(int i =0;i<s3.length;i++) {
+			for(int j =0;j<s3[i].length;j++) {
+				test += s3[i][j];
+			}
+		}
+		assertEquals(test, "1234123412349");
+		
+		TestArrayA[] arrayA = new TestArrayA[4];
+		for(int i=0;i<arrayA.length;i++) {
+			arrayA[i] = new TestArrayA(""+(i+1));
+			test += arrayA[i].val;
+		}
+		assertEquals(test, "12341234123491234");
+		*/
+		
+	}
+	
+	private void changeArrayValue(string[] s, string val, int i) {
+		s[i] = val;
+	}
+	
+	private void changeArray(string[] s) {
+		s = new string[]{"4","3","2","1"};
+	}
+}
+
+public testCase TestArrayA {
+	public string val;
+	public TestArrayA(string val) {
+		this.val = val;
+	}
+}
+

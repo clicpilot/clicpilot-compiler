@@ -1,0 +1,51 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestMemberAssign
+{
+	
+	public void test(){				
+		TestMemberAssignA a = new TestMemberAssignA();
+		for(int i=0;i<a.b.length;i++)
+		{
+			a.b[i] = new TestMemberAssignB();
+			a.b[i].test = "test b";			
+			for(int j=0;j<a.b[i].c.length;j++)
+			{
+				a.b[i].c[j].test = "test c";
+					
+			}
+		}
+		a.test = "test a";
+		this.check(a.test);	
+		for(int i=0;i<a.b.length;i++)
+		{
+			for(int j=0;j<a.b[i].c.length;j++)
+			{
+				this.check(a.b[i].c[j].test);
+			}
+			this.check(a.b[i].test);	
+		}	
+	}
+}
+
+public testCase TestMemberAssignA
+{
+	
+	public string test;
+	public TestMemberAssignB[] b = new TestMemberAssignB[2];
+	
+}
+
+public testCase TestMemberAssignB
+{
+	public TestMemberAssignC[] c = new TestMemberAssignC[2];
+	public string test;
+	
+}
+
+public testCase TestMemberAssignC
+{
+	
+	public string test;
+	
+}

@@ -1,0 +1,47 @@
+package yoyoo.lang;
+
+public yoyooStringBuffer StringBuffer {
+
+	
+	public StringBuffer() {
+		init();
+		
+	}
+	
+	public StringBuffer(string body) {
+		init(body);
+	}
+	
+	public StringBuffer append(string str) {
+		appendVal(str);
+		return this;
+	}
+	
+	public StringBuffer append(StringBuffer buf) {
+		appendVal(buf);
+		return this;
+	}
+
+	public StringBuffer deleteCharAt(int i) {
+		delCharAt(i);
+		return this;
+	}
+	
+	public int length() {
+		ref/*<int>*/ resultRef;
+		length(resultRef);
+		int tar = resultRef;
+		return tar;
+	}
+	
+    
+    	
+    	
+	public string toString() {
+		ref/*<string>*/ resultRef;
+		toString(resultRef);
+		string tar = resultRef;
+		return tar;
+		
+	}
+}

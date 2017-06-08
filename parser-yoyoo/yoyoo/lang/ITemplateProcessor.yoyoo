@@ -1,0 +1,5 @@
+package yoyoo.lang;
+
+public interface ITemplateProcessor {
+	public string process(Map argsMap);
+}

@@ -1,0 +1,10 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestReferenceFunctionC
+{
+	TestReferenceFunctionD testD = new TestReferenceFunctionD();
+	public void test(){
+		check("testD");
+	}
+}
+

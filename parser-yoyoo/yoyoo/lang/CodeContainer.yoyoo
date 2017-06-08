@@ -1,0 +1,9 @@
+package yoyoo.lang;
+
+public codeContainer CodeContainer {
+
+	public static void compile(string code) {
+		compileCode(code);
+	}
+	
+}

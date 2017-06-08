@@ -1,0 +1,73 @@
+package yoyoo.lang;
+
+public class StringUtil {
+
+	public static string firstUpper(string src) {
+		return String.firstUpper(src);
+	}
+	
+	public static string firstLower(string src) {
+		return String.firstLower(src);
+	}
+	
+	public static string upper(string src) {
+		return String.upper(src);
+	}
+	
+	public static string lower(string src) {
+		return String.lower(src);
+	}
+	
+	public static string append(string src1, string src2) {
+		return src1+src2;
+	}
+	
+	public static string quote(string src) {
+		return "\""+src+"\"";
+	}	
+	
+	public static boolean equals(string src1, string src2) {
+
+		return src1==src2;
+	}
+	
+	public static int length(string src) {
+		return String.length(src);
+	}
+	
+	public static boolean isEmpty(string src) {
+		return String.length(src)==0;
+	}
+	
+	public static boolean isNull(string src) {
+		return String.isNull(src);
+	}
+	
+	public static int len(string str) {
+		return String.len(str);
+	}
+	
+	public static string substring(string str, int off) {
+		return String.substring(str, off);
+	}
+	
+	public static string substring(string str, int off, int len) {
+		return String.substring(str, off, off+len);
+	}
+
+	public static string join(List<string> strarray, string sep) {
+		string res = "";
+		int size = strarray.size();
+		for(int i=0;i<size;i++) {
+			if(i>0) {
+				res+=sep;
+			}
+			res+=strarray.get(i);
+		}
+		return res;
+	}
+	
+	public static string quoteNotNull(string str) {
+		return String.isNull(str)?"null":"\""+str+"\"";
+	}
+}

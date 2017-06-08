@@ -1,0 +1,94 @@
+package org.yoyoo.core.engine.test.compilable;
+
+public testCase TestConstructor
+{
+
+	public static final TestConstructorD A = new   TestConstructorD("A");
+	public static final TestConstructorD B = new   TestConstructorD("B");
+	
+	public void test(){
+		TestConstructorA a = new TestConstructorA("test a");
+		check(a);
+		check(a.test);
+		check(a.b.test);
+		check(a.c.test);
+		a.foo();
+		TestConstructorD d = new TestConstructorD("test d");
+		check(d.test);
+		TestConstructorE e = new TestConstructorE("test e");
+		check(e.test);
+		TestConstructor.test1();
+		
+	}
+	
+	public static void test1() {
+		TestConstructorD staticD = TestConstructor.A;
+		TestConstructorE e = new TestConstructorE(staticD);
+		println(staticD == TestConstructor.A);
+	}
+}
+
+public testCase TestConstructorA
+{
+	
+	public string test = "test a";
+	public TestConstructorC c = new TestConstructorC();
+	public TestConstructorB b = new TestConstructorB(this);
+	
+	public void foo(){
+		TestConstructorA a1 = new TestConstructorA();
+		TestConstructorB b1 = new TestConstructorB(a1);
+	}
+
+	
+}
+public testCase TestConstructorB
+{
+	public string test = "test b";
+	
+	public TestConstructorA a;
+	public TestConstructorB(TestConstructorA arg)
+	{
+		this.a = arg;
+		this.test = arg.c.test;
+	}
+}
+
+public testCase TestConstructorC
+{
+	
+	public string test = "test c";
+	
+}
+
+public class TestConstructorD
+{
+	
+	public string test;
+	public TestConstructorD d;
+	public TestConstructorD(string test1) {
+		this.test = test1;
+	}
+	public TestConstructorD(TestConstructorD d) {
+		this.d=d;
+	}
+	
+	
+}
+
+
+
+public class TestConstructorE extends TestConstructorD
+{
+
+	public TestConstructorE(string test) {
+		super(test);
+	}
+	
+	public TestConstructorE(TestConstructorD d) {
+		super(d);
+		println(d == TestConstructor.A);
+	}
+	
+}
+

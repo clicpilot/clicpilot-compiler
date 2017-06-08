@@ -1,0 +1,15 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestRef
+{
+	
+	public void test(){
+		ref/*<boolean>*/ b;
+		b = false;
+		boolean a = b;
+		assertEquals(a, false);
+	}
+	
+}
+
+

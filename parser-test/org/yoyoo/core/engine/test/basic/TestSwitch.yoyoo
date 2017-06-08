@@ -1,0 +1,29 @@
+package org.yoyoo.core.engine.test.basic;
+
+public testCase TestSwitch
+{
+	
+	public void test(){
+	
+		for(int i=0;i<5; i++){
+			switch(i) {
+				case 0:
+					assertEquals(i, 0);
+					break;
+				case 1:
+					assertEquals(i, 1);
+					break;
+				case 2:
+				case 3:
+					assertEquals((i==2 || i==3), true);
+					break;
+				default:	
+					assertEquals(i, 4);
+					break;
+			
+			}
+		}
+		
+		
+	}
+}

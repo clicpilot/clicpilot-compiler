@@ -1,0 +1,18 @@
+package yoyoo.lang;
+
+
+public yoyooLongObject Long {
+
+	protected long val;
+	 
+	public Long(long val) {
+		setValue(val);
+	}
+	
+	public long getVal() {
+		return val;
+	}
+	
+	 
+	
+}
